@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🛡 Neural Threat Analysis</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🛡 Neural Threat Analysis</h1>
+
+        <h2>Incident Details</h2>
+        <pre>{{ incident_text }}</pre>
+
+        <h2>VirusTotal Findings</h2>
+        <ul class="vt-results">
+            {% for ioc, details in vt_results.items() %}
+                <li>
+                    <strong>{{ ioc }}</strong>:
+                    {{ details }}
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h2>AI Security Analysis</h2>
+        <pre>{{ ai_analysis }}</pre>
+
+        <a href="/download" class="btn">Download PDF Report</a>
+    </div>
+</body>
+</html>
+
